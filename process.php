@@ -31,11 +31,12 @@ if(isset($_POST['user'])){
 				}
 			}
 			$db->query('COMMIT;');
-			$message = 'Pedido feito para '.$_POST['user'].'!';
+			$message = 'Pedido realizado, '.$_POST['user'].'! Agora é só esperar um pouquinho e ser feliz!';
 
 		} elseif ($_POST['action'] == 'delete'){
 
 			$db->query(sprintf("DELETE FROM pedidos WHERE user='%s' AND reference_day='%s';", $user, $day));
+			$message = 'Tudo bem, meu jovem, o tio já deletou seus pedidos. Até a próxima!';
 
 		}
 	} catch (Exception $e) {

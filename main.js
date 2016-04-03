@@ -59,6 +59,8 @@ $(function(){
 
 	$('#send-button').click(sendPreferences);
 
+	$('#delete-order').click(deleteOrder);
+
 });
 
 function sendPreferences(){
@@ -80,6 +82,24 @@ function sendPreferences(){
 			alert('Infelizmente ocorreu um erro...');
 		}).always(function(){
 			$('#send-button').removeAttr('disabled');
+		});
+	}
+}
+
+function deleteOrder(){
+	sendData = {
+		user: user.name,
+		action: 'delete'
+	}
+
+	if(confirm('Tem certeza que não vai querer? Depois não vem pedir a do amiguinho...')){
+
+		$.post('/process.php', sendData, function(data){
+			selected = [];
+			updateSelected();
+			alert(data.message);
+		}, 'json').fail(function(){
+			alert('Infelizmente ocorreu um erro...');
 		});
 	}
 }

@@ -75,9 +75,14 @@ if ($allowed){
         border-top-right-radius: 6px;
       }
 
-      h2 > i {
+      h2 > i, #delete-order {
         font-size: 12px;
         border-bottom: 1px dashed #666;
+      }
+
+      #delete-order {
+        position: relative;
+        top: 30px;
       }
 
     </style>
@@ -148,6 +153,7 @@ if ($allowed){
           </div>
         </div>
         <p>
+          <a id="delete-order" href="javascript:;">Tio, mudei de ideia, não quero mais pizza não... '-'</a>
           <a id="send-button" class="btn btn-lg btn-success pull-right" href="javascript:;" role="button">
             Manda ver! &nbsp;&nbsp;<i class="icon glyphicon glyphicon-thumbs-up"></i>
           </a>
