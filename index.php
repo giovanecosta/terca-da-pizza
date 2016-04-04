@@ -1,6 +1,6 @@
 <?php 
 
-$tuesday = (date('w') == 2);
+$tuesday = true;//(date('w') == 2);
 
 $locked = (file_get_contents('closed.lock') == date('Y-m-d'));
 

@@ -99,7 +99,11 @@
   }
 
   if(sizeof($half) % 2 == 1){
-    $rest[array_pop($half)] = 4;
+    $flavour = array_pop($half);
+    if(!isset($rest[$flavour])){
+      $rest[$flavour] = 0;
+    }
+    $rest[$flavour] += 4;
   }
 
   for ($i = 0; $i < sizeof($half); $i += 2){

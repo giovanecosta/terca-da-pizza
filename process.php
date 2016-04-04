@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 $now = date('Y-m-d H:i:s');
 $day = date('Y-m-d');
 
-$locked = (file_get_contents('closed.lock') == date('Y-m-d'));
+$locked = (file_get_contents('closed.lock') == $day);
 
 $path = dirname(__FILE__).'/main.sqlite3';
 
