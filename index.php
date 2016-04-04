@@ -9,7 +9,7 @@ $allowed = ($tuesday and !$locked);
 if ($allowed){
   define('CLIENT_ID', '2154556232.31561887542');
   define('CLIENT_SECRET', '0a787af94f57b0f2bdf7decb89f41812');
-  define('REDIRECT_URI', 'http://'.$_SERVER['SERVER_NAME'].'/');
+  define('REDIRECT_URI', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].'/');
 
   if(!isset($_SESSION)){
     session_start();
