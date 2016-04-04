@@ -30,9 +30,7 @@ if ($allowed){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <?php echo '---'.(isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? $_SERVER['HTTP_X_FORWARDED_PROTO'] : $_SERVER['REQUEST_SCHEME']).'---'; ?> -->
-    <!-- <?php echo '==='.$_SERVER['HTTP_X_FORWARDED_PROTO'].'==='; ?> -->
-    <!-- <?php print_r($_SERVER); ?> -->
+    <!-- <?php print_r($_SESSION); ?> -->
     <meta charset="utf-8">
     
     <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
