@@ -1,6 +1,6 @@
 <?php 
 
-$tuesday = true;//(date('w') == 2);
+$tuesday = (date('w') == 2);
 
 $locked = (file_get_contents('closed.lock') == date('Y-m-d'));
 
@@ -16,7 +16,7 @@ if ($allowed){
   }
 
   if(isset($_GET['code'])){
-    $data = json_decode(file_get_contents('https://slack.com/api/oauth.access?code='.$_GET['code'].'&client_id='.CLIENT_ID.'&client_secret='.CLIENT_SECRET));
+    $data = json_decode(file_get_contents('https://slack.com/api/oauth.access?code='.$_GET['code'].'&client_id='.CLIENT_ID.'&client_secret='.CLIENT_SECRET.'&redirect_uri='.REDIRECT_URI));
     if(isset($data->access_token)){
       $_SESSION['access_token'] = $data->access_token;
     }
@@ -30,7 +30,6 @@ if ($allowed){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <?php print_r($_SESSION); ?> -->
     <meta charset="utf-8">
     
     <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
@@ -44,7 +43,7 @@ if ($allowed){
       if(isset($_SESSION['access_token'])){ ?>
         window.token = '<?php echo $_SESSION['access_token']; ?>';
       <?php } else { ?>
-        location.href = 'https://slack.com/oauth/authorize?client_id=<?php echo CLIENT_ID; ?>&redirect_uri=<?php echo REDIRECT_URI; ?>&scope=read';
+        location.href = 'https://slack.com/oauth/authorize?client_id=<?php echo CLIENT_ID; ?>&redirect_uri=<?php echo REDIRECT_URI; ?>&scope=identify';
       <?php } 
     }
     ?>
