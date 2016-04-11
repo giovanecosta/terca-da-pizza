@@ -7,7 +7,7 @@ $day = date('Y-m-d');
 
 $locked = (file_get_contents('closed.lock') == $day);
 
-$path = dirname(__FILE__).'/main.sqlite3';
+$path = dirname(__FILE__).'/db/main.sqlite3';
 
 if(!$locked){
 
