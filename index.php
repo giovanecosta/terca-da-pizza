@@ -43,7 +43,7 @@ if ($allowed){
       if(isset($_SESSION['access_token'])){ ?>
         window.token = '<?php echo $_SESSION['access_token']; ?>';
       <?php } else { ?>
-        location.href = 'https://slack.com/oauth/authorize?client_id=<?php echo CLIENT_ID; ?>&redirect_uri=<?php echo REDIRECT_URI; ?>&scope=identify';
+        location.href = 'https://slack.com/oauth/authorize?client_id=<?php echo CLIENT_ID; ?>&redirect_uri=<?php echo REDIRECT_URI; ?>&scope=users:read';
       <?php } 
     }
     ?>
