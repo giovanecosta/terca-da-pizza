@@ -103,20 +103,20 @@ if ($allowed){
 
       <div class="jumbotron">
         <?php if($allowed) { ?>
-        <h2>Escolha as opções abaixo</h2>
+        <h2>Escolha até 2 sabores abaixo</h2>
         <p>&nbsp;</p>
         <div id="selected" class="row">
           <div class="col-md-4 col-md-offset-4">
-            <p>Seu pedido atual:</p>
+            <p>Sua preferência atual:</p>
             <table class="table table-striped table-condensed">
               <thead>
                 <tr>
                   <th>
                     Sabor
                   </th>
-                  <th>
+                  <!-- <th>
                     Pedaços
-                  </th>
+                  </th> -->
                   <th>&nbsp;</th>
                 </tr>
               </thead>
@@ -126,18 +126,19 @@ if ($allowed){
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-3">
+          <div class="col-md-4 col-md-offset-4">
             <label for="flavours">Sabor:</label>
             <select id="flavours" class="form-control"></select>
           </div>
-          <div class="col-md-2">
-            <label for="pieces">Pedaços:</label>
+          <div class="col-md-1">
+            <label for="pieces"><!-- Pedaços: -->&nbsp;</label>
             <div class="input-group">
-              <select id="pieces" class="form-control">
+              <!-- <select id="pieces" class="form-control">
                 <?php for($i = 1; $i <= 8; $i++){ ?>
                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                 <?php } ?>
-              </select>
+              </select> -->
+              <input type="hidden" id="pieces" value="1" />
               <span class="input-group-btn">
                 <a class="btn btn-md" id="add-pizza" href="javascript:;"><i class="icon glyphicon glyphicon-plus"></i></a>
               </span>

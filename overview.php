@@ -65,6 +65,7 @@
   $users = [];
   $pizzas = [];
   $log = [];
+  $sumFlavours = 0;
 
   while ($row = $results->fetchArray()){
     $user = $row['user'];
@@ -76,6 +77,7 @@
       $pizzas[$flavour] = 0;
     }
     $pizzas[$flavour] += (int) $pieces;
+    $sumFlavours += (int) $pieces;
 
     $log[] = $row;
   }
@@ -83,7 +85,43 @@
   $order = [];
   $half = [];
   $rest = [];
+
+  $users = array_unique($users);
+
+  $qtd = count($users);
+
+  $pieces = $qtd * 3.5;
+
+  $qtdPizzas = ceil($pieces / 8);
+
+  if ($qtdPizzas % 2 == 1) {
+    $qtdPizzas++;
+  }
+
+  $qtdHalfs = $qtdPizzas / 2;
+
   foreach ($pizzas as $flavour => $pieces) {
+    $pct = $pieces / $sumFlavours;
+    $half[$flavour] = round($qtdHalfs * $pct);
+  }
+
+  $lastHalf = null;
+  foreach ($half as $flavour => $qtd) {
+    $total = ceil($qtd / 2);
+    if($total > 0){
+      $order[$flavour] = $total;
+    }
+    if($qtd % 2 == 1){
+      if($lastHalf){
+        $order['1/2 '.$lastHalf.' 1/2 '.$flavour] = 1;
+        $lastHalf = null;
+      } else {
+        $lastHalf = $flavour;
+      }
+    }
+  }
+
+  /*foreach ($pizzas as $flavour => $pieces) {
     $remaining = $pieces;
     if ($remaining >= 8){
       $order[$flavour] = floor($pieces / 8);
@@ -111,8 +149,7 @@
     $f2 = $half[$i + 1]; 
     $order['1/2 '.$f1.' 1/2 '.$f2] = 1;
   }
-
-  $users = array_unique($users);
+*/
 
   ?>
   <div class="container">
@@ -168,6 +205,9 @@
                 <?php } ?>
               </tbody>
             </table>
+          </div>
+          <div class="col-md-2 col-md-offset-5">
+          Total: <?php echo $qtdPizzas ?> Pizzas
           </div>
           <div class="col-md-2 col-md-offset-5">
             <button id="show-log">Log</button>

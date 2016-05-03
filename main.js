@@ -1,6 +1,5 @@
 
 window.imgPrefix = 'https://d3o331zyotmfip.cloudfront.net/img/products/';
-//window.token = 'xoxp-2154556232-23767323829-28782303909-2eec218148';
 
 window.user = null;
 
@@ -146,13 +145,19 @@ function updateDisplay(){
 }
 
 function addPizza(){
+
+	if (selected.length >= 2) {
+		alert('Escolha apenas 2 sabores, pls.');
+		return;
+	}
+
 	var flavour = $('#flavours').val();
 	var pieces = parseInt($('#pieces').val());
 
 	var found = false; 
 	for (var i in selected){
 		if (selected[i].pizza == flavour){
-			selected[i].pieces += pieces;
+			//selected[i].pieces += pieces;
 			found = true;
 			break;
 		}
@@ -192,9 +197,9 @@ function updateSelected(){
 		td.text(capitalize(selected[i].pizza));
 		tr.append(td);
 
-		td = $('<td />');
+		/*td = $('<td />');
 		td.text(selected[i].pieces);
-		tr.append(td);
+		tr.append(td);*/
 
 		td = $('<td />');
 		td.append(removePizzaButton);
