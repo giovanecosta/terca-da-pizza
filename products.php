@@ -28,6 +28,10 @@ $recipes = [
 	'milho' => 'mussarela e... isso mesmo, milho!',
 	'hotdog' => 'WTF?! salsicha, mussarela e batata palha',
 	'chocolate' => 'chocolate com castanha de caju',
+	'frango_com_catupiry' => 'Frango desfiado, catupiry, azeitona e orégano.',
+	'5_queijos' => 'Molho, mussarela, queijo da roça, parmesão, queijo prato, azeitona e orégano.',
+	'atum' => 'Molho, mussarela, atum, cebola e orégano',
+	'portuguesa' => 'Molho, mussarela, presunto, cebola, ervilha, milho, ovos, azeitona e orégano.',
 ];
 
 $products = [];
@@ -37,10 +41,11 @@ foreach (glob('flavours/*.jpg') as $arquivo) {
     $x = $model;
     $name = explode('.', basename($arquivo));
     $name = $name[0];
+    $pretty_name = ucwords(str_replace('_', ' ', $name));
 
     $x['id'] = $i++;
-    $x['Name'] = ucfirst($name);
-    $x['nickname'] = ucfirst($name);
+    $x['Name'] = $pretty_name;
+    $x['nickname'] = $pretty_name;
     $x['ephoto'] = basename($arquivo);
     if (isset($recipes[$name])){
     	$x['Recipes'] = ucfirst($recipes[$name]);
