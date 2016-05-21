@@ -1,5 +1,9 @@
 
-window.imgPrefix = 'https://d3o331zyotmfip.cloudfront.net/img/products/';
+//window.imgPrefix = 'https://d3o331zyotmfip.cloudfront.net/img/products/';
+window.imgPrefix = '/flavours/';
+
+//window.productsUrl = 'https://dominos-site.s3.amazonaws.com/products.json';
+window.productsUrl = 'products.php';
 
 window.user = null;
 
@@ -11,7 +15,7 @@ window.removePizzaButton = '<a class="btn btn-sm remove-pizza" href="javascript:
 $(function(){
 	var flavoursSelect = $('#flavours');
 
-	$.getJSON('https://dominos-site.s3.amazonaws.com/products.json', function(data){
+	$.getJSON(productsUrl, function(data){
 		for(i in data){
 			if (data[i].category_type == 'PIZZA') {
 				pizzas.push(data[i]);

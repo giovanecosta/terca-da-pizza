@@ -1,6 +1,6 @@
 <?php 
 
-$tuesday = (date('w') == 2);
+$tuesday = true;//(date('w') == 2);
 
 $locked = (file_get_contents('closed.lock') == date('Y-m-d'));
 
@@ -148,7 +148,7 @@ if ($allowed){
         <p>&nbsp;</p>
         <div class="row">
           <div id="display" class="col-md-4 col-md-offset-4 text-center">
-            <img src="" />
+            <img src="" width="300" height="200" />
             <p></p>
           </div>
         </div>
