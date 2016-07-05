@@ -70,16 +70,30 @@
   while ($row = $results->fetchArray()){
     $user = $row['user'];
     $flavour = $row['flavour'];
-    $pieces = $row['quantity'];
+    // For now is always 1
+    //$pieces = $row['quantity'];
 
     $users[] = $user;
-    if(!isset($pizzas[$flavour])){
-      $pizzas[$flavour] = 0;
+
+    if(!isset($pizzas[$user])){
+      $pizzas[$user] = [];
     }
-    $pizzas[$flavour] += (int) $pieces;
-    $sumFlavours += (int) $pieces;
+    $pizzas[$user][] = $flavour;
 
     $log[] = $row;
+  }
+
+  $selectedFlavours = [];
+  foreach ($pizzas as $user => $flavours) {
+    
+    foreach ($flavours as $flavour) {
+      if(!isset($selectedFlavours[$flavour])){
+        $selectedFlavours[$flavour] = 0;
+      }
+      $selectedFlavours[$flavour] += (3 - sizeof($flavours));
+    }
+
+    $sumFlavours += 2;
   }
 
   $order = [];
@@ -98,16 +112,16 @@
     $qtdPizzas++;
   }
 
-  $qtdHalfs = $qtdPizzas / 2;
+  $qtdHalfs = $qtdPizzas * 2;
 
-  foreach ($pizzas as $flavour => $pieces) {
-    $pct = $pieces / $sumFlavours;
+  foreach ($selectedFlavours as $flavour => $weight) {
+    $pct = $weight / $sumFlavours;
     $half[$flavour] = round($qtdHalfs * $pct);
   }
 
   $lastHalf = null;
   foreach ($half as $flavour => $qtd) {
-    $total = ceil($qtd / 2);
+    $total = floor($qtd / 2);
     if($total > 0){
       $order[$flavour] = $total;
     }
@@ -119,6 +133,10 @@
         $lastHalf = $flavour;
       }
     }
+  }
+
+  if($lastHalf){
+    $rest[$lastHalf] = 1;
   }
 
   /*foreach ($pizzas as $flavour => $pieces) {
@@ -193,7 +211,7 @@
                 <?php if(sizeof($rest) > 0){ ?>
                   <tr>
                     <td colspan="2">
-                      <b>Pedaços restantes:</b>
+                      <b>Metades restantes:</b>
                     </td>
                   </tr>
                   <?php foreach ($rest as $flavour => $quantity) { ?>
