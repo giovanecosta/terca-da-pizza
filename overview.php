@@ -114,9 +114,26 @@
 
   $qtdHalfs = $qtdPizzas * 2;
 
+  $loss = 0;
+
   foreach ($selectedFlavours as $flavour => $weight) {
     $pct = $weight / $sumFlavours;
-    $half[$flavour] = round($qtdHalfs * $pct);
+    $brute = $qtdHalfs * $pct;
+    $half[$flavour] = round($brute);
+    $loss += ($brute - round($brute));
+  }
+
+  $loss = round($loss);
+
+  asort($half);
+  $half = array_reverse($half);
+
+  $i = 0;
+  while ($loss > 0){
+    $keys = array_keys($half);
+    $half[$keys[$i]] += 1;
+    $i++;
+    $loss--;
   }
 
   $lastHalf = null;
