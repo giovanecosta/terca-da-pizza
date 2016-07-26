@@ -193,9 +193,9 @@
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Home</a></li>
             <?php if($locked){ ?>
-            <li role="presentation"><a href="overview.php?lock=false">Reabrir</a></li>
+            <li role="presentation"><a href="status.php?lock=false">Reabrir</a></li>
             <?php } else { ?>
-            <li role="presentation"><a href="overview.php?lock=true">Finalizar Hoje</a></li>
+            <li role="presentation"><a href="status.php?lock=true">Finalizar Hoje</a></li>
             <?php } ?>
           </ul>
         </nav>
