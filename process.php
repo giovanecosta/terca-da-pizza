@@ -7,9 +7,11 @@ $day = date('Y-m-d');
 
 $locked = (file_get_contents('closed.lock') == $day);
 
+$tuesday = (date('w') == 2);
+
 $path = dirname(__FILE__).'/db/main.sqlite3';
 
-if(!$locked){
+if(!$locked and $tuesday){
 
 	if(isset($_POST['user'])){
 
@@ -53,8 +55,10 @@ if(!$locked){
 		respond_message($message);
 	}
 
-} else {
-	respond_message('Pedidos fechados...');
+} else if ($locked) {
+	respond_message($messages_closed[rand(0, sizeof($messages_closed) - 1)]);
+} else if (!$tuesday){
+	respond_message($messages_only_tuesday[rand(0, sizeof($messages_only_tuesday) - 1)]);
 }
 
 
