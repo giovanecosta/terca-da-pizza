@@ -62,7 +62,7 @@ if(!$locked and $tuesday){
 		
 		respond_message($messages_closed[rand(0, sizeof($messages_closed) - 1)]);
 	
-	else if (!$tuesday){
+	} else if (!$tuesday){
 		
 		respond_message($messages_only_tuesday[rand(0, sizeof($messages_only_tuesday) - 1)]);
 	}
