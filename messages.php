@@ -3,7 +3,7 @@
 $today_is_not_tuesday = ['hoje', 'não', 'é', 'terça'];
 shuffle($today_is_not_tuesday);
 
-$fp = !empty($_GET['from_pirata']);
+$fp = !empty($_POST['from_pirata']);
 
 $messages_only_tuesday = [
   'Só rola na Terça... Volta na Terça...',
