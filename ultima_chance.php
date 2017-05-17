@@ -11,7 +11,7 @@
   </head>
   <body style="text-align: center;">
 
-    <img src="trolling.jpg" alt="Não há nada mais que ue poderia dizer sobre essa fatídica circunstância em que nos encontramos. Aceitar a condição humana de viver numa país onde seus cidadãos tem naturalmente a habilidade de trollar os coleguinhas me parece a solução mais conveniente, ou, quem sabe, se converter a ceita que dói menos. Sorry, Você foi trollado!">
+    <img src="trolling.jpg" alt="Não há nada mais que ue poderia dizer sobre essa fatídica circunstância em que nos encontramos. Aceitar a condição humana de viver numa país onde seus cidadãos tem naturalmente a habilidade de trollar os coleguinhas me parece a solução mais conveniente, ou, quem sabe, se converter a ceita que dói menos. Sorry, Você foi trollado!" title="Não há nada mais que ue poderia dizer sobre essa fatídica circunstância em que nos encontramos. Aceitar a condição humana de viver numa país onde seus cidadãos tem naturalmente a habilidade de trollar os coleguinhas me parece a solução mais conveniente, ou, quem sabe, se converter a ceita que dói menos. Sorry, Você foi trollado!">
 
   </body>
 </html>
