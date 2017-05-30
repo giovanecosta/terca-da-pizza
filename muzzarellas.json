@@ -1,0 +1,162 @@
+[
+  {
+    "img":"upload/pizzas/7_pizza_g.png",
+    "title":"ATUM",
+    "desc":"Muçarela, Atum, Cebola"
+  },
+  {
+    "img":"upload/pizzas/53_pizza_g.png",
+    "title":"ABOBRINHA",
+    "desc":"Muçarela, Parmesão, Abobrinha refogada ao alho e cebola"
+  },
+  {
+    "img":"upload/pizzas/8_pizza_g.png",
+    "title":"BACON",
+    "desc":"Muçarela, Tomate, Bacon, Cebola"
+  },
+  {
+    "img":"upload/pizzas/13_pizza_g.png",
+    "title":"CALABRESA",
+    "desc":"Calabresa, Azeitonas Pretas, Cebola"
+  },
+  {
+    "img":"upload/pizzas/12_pizza_g.png",
+    "title":"BRÓCOLIS",
+    "desc":"Muçarela, Catupiry, Brócolis refogado com alho"
+  },
+  {
+    "img":"upload/pizzas/4_pizza_g.png",
+    "title":"ALHO E ÓLEO",
+    "desc":"Muçarela, Alho, Tomate, Parmesão"
+  },
+  {
+    "img":"upload/pizzas/16_pizza_g.png",
+    "title":"DOS MUZZA",
+    "desc":"Calabresa, Muçarela, Catupiry"
+  },
+  {
+    "img":"upload/pizzas/18_pizza_g.png",
+    "title":"FRANGO",
+    "desc":"Catupiry, Frango Desfiado  refogado com tomate e cebola"
+  },
+  {
+    "img":"upload/pizzas/20_pizza_g.png",
+    "title":"FRANGO ESPECIAL",
+    "desc":"Calabresa, Muçarela, Frango Desfiado  refogado com tomate e cebola, Cebola"
+  },
+  {
+    "img":"upload/pizzas/68_pizza_g.png",
+    "title":"LOMBO CHEDDAR",
+    "desc":"Muçarela, Lombo Canadense, Cebola, Cheddar Sadia"
+  },
+  {
+    "img":"upload/pizzas/23_pizza_g.png",
+    "title":"MILHO",
+    "desc":"Muçarela, Milho"
+  },
+  {
+    "img":"upload/pizzas/21_pizza_g.png",
+    "title":"LOMBINHO",
+    "desc":"Catupiry, Lombo Canadense, Cebola"
+  },
+  {
+    "img":"upload/pizzas/24_pizza_g.png",
+    "title":"MUÇARELA",
+    "desc":"Muçarela"
+  },
+  {
+    "img":"upload/pizzas/22_pizza_g.png",
+    "title":"MARGUERITA",
+    "desc":"Muçarela, Tomate, Parmesão, Manjericão"
+  },
+  {
+    "img":"upload/pizzas/26_pizza_g.png",
+    "title":"PALMITO",
+    "desc":"Muçarela, Palmito, Cebola"
+  },
+  {
+    "img":"upload/pizzas/25_pizza_g.png",
+    "title":"NAPOLITANA",
+    "desc":"Muçarela, Tomate, Parmesão"
+  },
+  {
+    "img":"upload/pizzas/48_pizza_g.png",
+    "title":"PEPERONI",
+    "desc":"Muçarela, Peperoni"
+  },
+  {
+    "img":"upload/pizzas/67_pizza_g.png",
+    "title":"PEPERONI CHEDDAR",
+    "desc":"Muçarela, Peperoni, Cebola, Cheddar Sadia"
+  },
+  {
+    "img":"upload/pizzas/62_pizza_g.png",
+    "title":"PERU",
+    "desc":"Muçarela, Tomate, Peito de Peru"
+  },
+  {
+    "img":"upload/pizzas/40_pizza_g.png",
+    "title":"PORTUGUESA",
+    "desc":"Muçarela, Presunto, Azeitonas Pretas, Ovos, Cebola"
+  },
+  {
+    "img":"upload/pizzas/41_pizza_g.png",
+    "title":"PRESUNTO",
+    "desc":"Muçarela, Tomate, Presunto"
+  },
+  {
+    "img":"upload/pizzas/32_pizza_g.png",
+    "title":"RÚCULA",
+    "desc":"Muçarela, Rúcula, Tomate Seco"
+  },
+  {
+    "img":"upload/pizzas/31_pizza_g.png",
+    "title":"QUATRO QUEIJOS",
+    "desc":"Muçarela, Catupiry, Parmesão, Gorgonzola"
+  },
+  {
+    "img":"upload/pizzas/35_pizza_g.png",
+    "title":"TOSCANA",
+    "desc":"Calabresa, Muçarela, Cebola"
+  },
+  {
+    "img":"upload/pizzas/36_pizza_g.png",
+    "title":"VEGETARIANA",
+    "desc":"Muçarela, Brócolis refogado com alho, Palmito, Tomate Seco"
+  },
+  {
+    "img":"upload/pizzas/42_pizza_g.png",
+    "title":"CHOCOLATE",
+    "desc":"Chocolate ao leite, Kiwi"
+  },
+  {
+    "img":"upload/pizzas/43_pizza_g.png",
+    "title":"CLÁSSICA",
+    "desc":"Banana, Açúcar e Canela"
+  },
+  {
+    "img":"upload/pizzas/65_pizza_g.png",
+    "title":"ABOBRINHA FIT",
+    "desc":"Abobrinha refogada ao alho e cebola, Muçarela Light, Massa Integral, Cream Cheese"
+  },
+  {
+    "img":"upload/pizzas/44_pizza_g.png",
+    "title":"NUTELLA",
+    "desc":"Nutella, Castanha de Caju Granulada"
+  },
+  {
+    "img":"upload/pizzas/66_pizza_g.png",
+    "title":"PERU FIT",
+    "desc":"Tomate, Peito de Peru, Muçarela Light, Massa Integral, Cream Cheese"
+  },
+  {
+    "img":"upload/pizzas/69_pizza_g.png",
+    "title":"PESTO FIT",
+    "desc":"Tomate, Muçarela Light, Pesto de Manjericão, Massa Integral"
+  },
+  {
+    "img":"upload/pizzas/47_pizza_g.png",
+    "title":"CONFETE",
+    "desc":"Chocolate ao leite, Confete"
+  }
+]

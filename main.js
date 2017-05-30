@@ -1,5 +1,5 @@
 
-window.imgPrefix = 'https://d3o331zyotmfip.cloudfront.net/img/products/';
+window.imgPrefix = 'https://www.osmuzzarellas.com.br/';
 
 window.user = null;
 
@@ -11,16 +11,13 @@ window.removePizzaButton = '<a class="btn btn-sm remove-pizza" href="javascript:
 $(function(){
 	var flavoursSelect = $('#flavours');
 
-	$.getJSON('https://dominos-site.s3.amazonaws.com/products.json', function(data){
-		for(i in data){
-			if (data[i].category_type == 'PIZZA') {
-				pizzas.push(data[i]);
-			}
-		}
+	$.getJSON('/muzzarellas.json', function(data){
+
+		pizzas.push(data[i]);
 
 		pizzas = pizzas.sort(function(a, b){
-			a = capitalize(a.nickname);
-			b = capitalize(b.nickname);
+			a = capitalize(a.title);
+			b = capitalize(b.title);
 			return a > b ? 1 : (a < b ? -1 : 0)
 		});
 		fillFlavours();
@@ -119,8 +116,8 @@ function fillFlavours(){
 	for (var i in pizzas){
 		var pizza = pizzas[i];
 		var opt = $('<option />')
-		opt.text(capitalize(pizza.nickname));
-		opt.attr('value', pizza.nickname);
+		opt.text(capitalize(pizza.title));
+		opt.attr('value', pizza.title);
 
 		flavoursSelect.append(opt);
 	}
@@ -136,9 +133,9 @@ function updateDisplay(){
 	var display = $('#display');
 	for (var i in pizzas){
 		var pizza = pizzas[i];
-		if (pizza.nickname == flavour){
-			display.find('img').attr('src', imgPrefix + pizza.ephoto);
-			display.find('p').text(pizza.Recipes);
+		if (pizza.title == flavour){
+			display.find('img').attr('src', imgPrefix + pizza.img);
+			display.find('p').text(pizza.desc);
 			break;
 		}
 	}
@@ -154,7 +151,7 @@ function addPizza(){
 	var flavour = $('#flavours').val();
 	var pieces = parseInt($('#pieces').val());
 
-	var found = false; 
+	var found = false;
 	for (var i in selected){
 		if (selected[i].pizza == flavour){
 			//selected[i].pieces += pieces;
@@ -208,7 +205,7 @@ function updateSelected(){
 		$('#selected').find('table tbody').append(tr);
 
 	}
-	
+
 	if (selected.length > 0){
 		$('#selected').show();
 	} else {
