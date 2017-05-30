@@ -13,7 +13,7 @@ $(function(){
 
 	$.getJSON('/muzzarellas.json', function(data){
 
-		pizzas.push(data[i]);
+		pizzas = data;
 
 		pizzas = pizzas.sort(function(a, b){
 			a = capitalize(a.title);
